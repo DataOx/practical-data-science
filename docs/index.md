@@ -8,6 +8,10 @@ This is quite important for setting up the vscode. If you directly start from a 
 # run python interactive
 This was one of the reasons that I did not want to giveup spyder, now vscode has it as well. The default way of running script set the path to where the script is. This can be inconvenient is we want to our path always start from project root, which is the case when you want to deploy your code somewhere, for example docker. To change this, a convenient way is to follow  File->preference->settings->workspace->extensions->python->Notebook File root, set to ${workspaceFolder} instead of ${fileDirname}. 
 
+# parser.parse_args() does not work in python interactive
+
+This is can be solved run sys.argv = [''] before running argpaser in python interactives. See, https://github.com/microsoft/vscode-python/issues/11206
+
 # pytest discovery failed (exit code 2)
 
 This can caused by that the folder and the test_**.py has the same name. If your test files are nested in a deep directory structure, try add a __init__.py file in the same folder. 
