@@ -1,0 +1,2 @@
+## import csv file into SQL cause converting the long numbers to scientific numbers. For example: conver 1.1234455 into 1.2234455E12
+This error is caused by the the language discrepency between English and Danish for example. In danish thousands is treated as . while English is not. Thus, when save the csv file in python, you can set thousands to ',' to solve this problem. for example df.to_csv('res.csv',thousands = ','). 
