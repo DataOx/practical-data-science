@@ -1,0 +1,36 @@
+I am a heavy python user and sometimes need to run R functions so that to leverage the power of both. There are a couple of pkgs that are available for this purpose, but the most reconized one is rpy2. https://rpy2.github.io/doc/v2.9.x/html/introduction.html
+
+# 1) run a R function inside python.
+Example: 
+import rpy2.robjects as robjects
+#Whenever the R code creates variables, those variables are "located" in that Global Environment by default.
+robjects.r('''
+        # create a function `f`
+        calArea <- function(r, verbose=FALSE) {
+            if (verbose) {
+                cat("I am calling calArea().\n")
+            }
+            pi * r *r
+        }
+        # call the function `calArea` with argument value 3
+        calArea(3)
+        ''')
+r_f = robjects.globalenv['calArea']
+print(r_f.r_repr())
+# alternatively, we can do it like this:
+r_f = robjects.r['calArea']
+res = r_f(3)
+
+#2) import a local built R pkg into python. 
+
+When we run customised code, we may need to build our own R package and use it in another environment. We first use devtools and roxygen2. An simple example can be seen here: https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/ and http://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf 
+
+We can first use R studio to build the package. Then copy the package into the python project root directory. To built the package in R studio, once the project structure is in place, simply go to panel build-> build source package. In the build process, you can see what is the built package name and where it is. for exmaple the pkg name can be testPackage_0.3.1.tar.gz. Then copy this to python project root if it is not already there. 
+
+When having the R packge inplace, we can use rpy2 to import the package. See here:
+from rpy2.robjects.packages import importr
+# import R's utility package
+utils = rpackages.importr('utils')
+testPackage = utils.install_packages('file://testPackage_0.3.1.tar.gz', type = "source")
+Then you can follow the normal routine to use R package in python. 
+
