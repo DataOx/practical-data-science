@@ -1,0 +1,24 @@
+I aim to learn something on how to develop an app and websites. I came to the great resource from freecodecamp. Then I started my journey on learning django. Ref: https://www.youtube.com/watch?v=F5mRW0jo-U4
+
+This is a great course and I also followed the docker course which is also extremely good. 
+
+django learning notes:
+
+In the course, it was suggested to use virtuenv to create isolated envs. I stick to use conda and it works fine. For django version, I used 2.5.1 since the recommended on in course does not really work anymore. 
+
+When start a django project, the first thing to remember is that the root of the project is where the management.py is. cd to that path and start to work with the examples. 
+
+First thing first, start up the server: python management.py runserver
+Then the server will be running and you can start to code and test the outcome.
+
+There are a couple of place we need to keep an eye on when we start to work. settings.py and urls.py. settings.py is used to find paths for html templates, add your apps, find your app keys etc. 
+urls.py is used to add or remove urls so that certain things can be shown on different urls. 
+
+1) some commonly used functions are 
+  a) start an app (called products for example)
+  python manage.py startapp products
+  b) python manage.py createsuperuser: create users for the admin app
+  c) python manage.py makemigrations: used when create or interact with databases
+  d)python manage.py migrate excute the migration schema. combined use with c)
+  e) python manage.py shell : enter the python interactive terminal 
+  
