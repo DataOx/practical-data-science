@@ -1,0 +1,65 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+- master
+- releases/*
+
+stages:
+- stage: Docker
+  jobs:
+  - job: Docker
+    steps:
+    - task: Docker@2
+      displayName: Login to docker registry
+      inputs:
+        containerRegistry: $(docker_service_connection)
+        command: 'login'
+    - task: Docker@2
+      displayName: Build Docker image
+      inputs:
+        containerRegistry: $(docker_service_connection)
+        repository: $(docker_repository_name)
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        arguments: '--build-arg REGISTRY_URL=$(docker_registry_url) --build-arg VERSION=$(VERSION)'
+        tags: |
+          latest
+          $(VERSION)
+          $(Build.BuildId)
+    - task: Docker@2
+      displayName: Push Docker image
+      inputs:
+        containerRegistry: $(docker_service_connection)
+        repository: $(docker_repository_name)
+        command: 'push'
+        tags: |
+          latest
+          $(VERSION)
+          $(Build.BuildId)
+- stage: AML_Pipelines
+  jobs:
+  - job: Pipelines
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+        addToPath: true
+        architecture: 'x64'
+    - script: pip install -r requirements.txt
+      displayName: 'Install requirements'
+    - task: PythonScript@0
+      displayName: Create and run forecast pipeline
+      inputs:
+        scriptSource: 'filePath'
+        scriptPath: 'forecast_pipeline.py'
+      env:
+        VERSION: $(VERSION)
+        ServicePrincipalID: $(ServicePrincipalID)
+        tenantId: $(tenantId)
+        ml-workspace: $(ws_secret)
+        subscriptionId: $(subscriptionId)
+        resourceGruppeName: $(resource_group)
+        containerWorkspaceName: $(registry_name)
+        MLWorkspaceName: $(workspace_name)
+
