@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 load_dotenv()
 
-def testSQL():
+def connect2SQL():
     """sample code to test SQL connection
     """    
     server = ****
@@ -69,3 +69,49 @@ def fetchData(selectStr,whereStr,database,schema,tablename, conn, dataReport = F
         #display the report
         masterData_report.show_html(reportName + '.html')
     return dfO
+
+
+def save2SQL(calOut_py,toSql = True):
+    '''
+    This function save data to SQL.
+    :param calOut_py: (dataframe) dataframe contains country names, number of working days.
+    :return:
+        
+    Example:         
+    '''
+        
+    import pyodbc
+    from sqlalchemy import create_engine
+    import urllib
+    
+    server = ***
+    database = ****
+    # connect via ActiveDirectoryInteractive
+    #userName = 'lji@***.com' 
+    #connectStr = 'DRIVER={ODBC Driver 17 for SQL Server};server='+server+';database='+database+';UID='+userName+';Authentication=ActiveDirectoryInteractive'
+    # connect via activedirectorypassword
+    username = os.environ.get("db_user") 
+    password = os.environ.get("db_key") 
+    connectStr = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password
+
+    cnxn = pyodbc.connect(connectStr)
+    # for first time log in, a pop-up window show up asks for password 
+    #cursor = cnxn.cursor()
+    # insert whole dataframe into sql
+    if toSql:
+        print(toSql)
+        '''
+        quoted = urllib.parse.quote_plus(connectStr)
+        engine = create_engine('mssql+pyodbc:///?odbc_connect={}'.format(quoted))
+        print('engine created')
+        # run fetchCalendar.py to get the dataframe first.
+        calOut_py.to_sql('calendarTest', schema='calendar', con = engine, if_exists='append', chunksize=200, index=False)
+        '''
+        cursor = cnxn.cursor()
+        cursor.execute("""INSERT INTO calendar.[calendarTest] (timestamp, noOfWorkingDays, C, Country) VALUES ('2020-01-01',12,'abc','test')""") 
+        cnxn.commit()
+        
+    cnxn.close()    
+    return True
+
+
