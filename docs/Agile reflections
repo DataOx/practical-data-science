@@ -1,0 +1,47 @@
+DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.
+
+    Agile planning. Together, we'll create a backlog of work that everyone on the team and in management can see. We'll prioritize the items so we know what we need to work on first. The backlog can include user stories, bugs, and any other information that helps us.
+    Continuous integration (CI). We'll automate how we build and test our code. We'll run that every time a team member commits changes to version control.
+    Continuous delivery (CD). CD is how we test, configure, and deploy from a build to a QA or production environment.
+    Monitoring. We'll use telemetry to get information about an application's performance and usage patterns. We can use that information to improve as we iterate.
+Elite performers:
+
+    Deploy more frequently
+
+    In fact, some teams deploy up to dozens of times per day.
+
+    Practices such as monitoring, continuous testing, database change management, and integrating security earlier in the software development process help elite performers deploy more frequently, and with greater predictability and security.
+
+    Reduce lead time from commit to deploy
+
+    Lead time is the time it takes for a feature to make it to the customer. By working in smaller batches, automating manual processes, and deploying more frequently, elite performers can achieve in hours or days what once took weeks or even months.
+
+    Reduce change failure rate
+
+    A new feature that fails in production or that causes other features to break can create a lost opportunity between you and your users. As high-performing teams mature, they reduce their change failure rate over time.
+
+    Recover from incidents more quickly
+
+    When incidents do occur, elite performers are able to recover more quickly. Acting on metrics helps elite performers recover more quickly while also deploying more frequently.
+
+
+Product team VS project team
+
+product-centric model?
+A business-centric strategy for delivering software and digital experiences in which a product is developed that delivers an ongoing business capability (as opposed to a limited time project-based project). Generally, a product manager owns this product and is responsible for its ongoing development and its budget. This product may exist on a platform, which is essentially a product on which other products are built.
+
+    Definition by Gartner
+
+
+What is Continuous Collaboration?
+
+Continuous Collaboration is a practice that supports the cultural shifts that are key to any DevOps journey. Continuous Collaboration enables teams to innovate outside of the boundaries of planned meetings, and fosters innovation within the team by creating an integrated experience.
+
+Silos can be broken down using technologies and practices that make it possible for teams to work together even if no ideal co-location exists.
+
+Review The Agile Manifesto from the perspective of Continuous Collaboration and you will realize that it really is all about the value of collaborating and having personal interactions in order to truly innovate. Continuous Collaboration encourages you to value:
+
+    Individuals and interactions over processes and tools
+    Working software over comprehensive documentation
+    Customer collaboration over contract negotiation
+    Responding to change over following a plan
