@@ -1,1 +1,15 @@
 wildcard pattern **/*.csproj. Both ** and *.csproj are examples of what are called glob patterns. The ** part specifies to search the current directory and all child directories. The *.csproj part specifies any .csproj file. Wildcards let you act on multiple files without specifying each one. If you need to act on a specific file only, you can specify that file instead of using wildcards.
+
+#value stream map
+Creating a value stream map, or VSM, helps you analyze your current release cycle process. The purpose of a VSM is to visually show where in the process a team creates value and where there's waste. The goal, of course, is to arrive at a process that delivers maximum value to the customer with minimum waste. A VSM can help you pinpoint those areas that either don't contribute any value or that actually reduce the value of the product.
+(https://docs.microsoft.com/en-us/learn/modules/assess-your-development-process/4-assess-process-efficiency)
+
+# deployment patterns
+Here are the possibilities we should consider:
+
+    Blue-green deployment
+    Canary releases
+    Feature toggles
+    Dark launches
+    A/B testing
+    Progressive-exposure deployment (ring-based deploymen)
