@@ -1,3 +1,27 @@
+But what is the most important skill for 21st century success?
+
+A willingness and ability to learn.
+
+Gene Kim is a renowned DevOps researcher, author, and visionary. He identifies three things that are required to make DevOps happen:
+
+"One is the cultural component. Certainly, the other part is tools and technology. The third part is architecture. You need great technology practices, which includes automation. You need a high-trust culture. And, it is architecture that enables you to get there." Good architecture facilitates deployability and testability.
+
+Conway's law: Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
+
+The law is based on the reasoning that for a software module to function, multiple authors must communicate frequently with each other.
+
+Therefore, the software interface structure of a system will reflect the social boundaries of the organization(s) that produced it, across which communication is more difficult.
+
+
+All improvement requires change, but not all change is improvement. This is why measurement is a critical success factor to organizations using DevOps. As Peter Drucker says, “If you can’t measure it, you can’t improve it.”
+
+Measure impact, not activity!
+    Lead time for change: a measure of software delivery performance tempo. The time it takes for a bug fix, new feature, or any other change to go from idea to deployment to production.
+    Deployment frequency: a direct or indirect measure of response time, team cohesiveness, developer capabilities, development tool effectiveness, and overall DevOps team efficiency.
+    Mean time to restore: how long it generally takes to restore a primary app or service when a service incident occurs.
+    Change fail percentage: the percentage of changes to production (including, for example, software releases and infrastructure configuration changes) that fail.
+
+
 wildcard pattern **/*.csproj. Both ** and *.csproj are examples of what are called glob patterns. The ** part specifies to search the current directory and all child directories. The *.csproj part specifies any .csproj file. Wildcards let you act on multiple files without specifying each one. If you need to act on a specific file only, you can specify that file instead of using wildcards.
 
 #value stream map
