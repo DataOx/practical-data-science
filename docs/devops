@@ -37,3 +37,13 @@ Here are the possibilities we should consider:
     Dark launches
     A/B testing
     Progressive-exposure deployment (ring-based deploymen)
+    
+    
+:::mermaid
+graph TB
+    subgraph SAP
+    ibp[SAP IBP]-->bw[SAP BW]
+    end
+bw-->sql[SQL Server]
+subgraph Azure
+sql-->aml[Azure ML]
