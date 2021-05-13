@@ -1,0 +1,16 @@
+How to setup pipenv with vscode
+
+The licencing issue with anaconda makes small teams with limited budget a bit troublesome to use. Thus, we decided to look for a different solution. Pipenv comes in play.
+
+Here shows how to get pipenv up and running in vscode using windows 10.
+
+1) download python from official python website and make sure that python is added to PATH.
+
+2) follow this ref: https://docs.python-guide.org/dev/virtualenvs/
+We frenquently run into this error:
+pipenv : The term 'pipenv' is not recognized as the name of a cmdlet, function, script file, or operable program.
+
+Fix: 1) cd to the project folder in vscode and start a powershell.
+     2) run py -m site --user-site in the powershell. Then you get results like this: C:\Users\***\AppData\Roaming\Python\Python39\site-packages. Then replace site-packages with Scripts and add it to path from system environemnts:
+       C:\Users\1056673\AppData\Roaming\Python\Python39\Scripts
+       Is this is setup correctly, you can run pipenv in the powershell withou any errors. 
