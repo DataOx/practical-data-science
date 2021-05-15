@@ -14,3 +14,18 @@ Fix: 1) cd to the project folder in vscode and start a powershell.
      2) run py -m site --user-site in the powershell. Then you get results like this: C:\Users\***\AppData\Roaming\Python\Python39\site-packages. Then replace site-packages with Scripts and add it to path from system environemnts:
        C:\Users\1056673\AppData\Roaming\Python\Python39\Scripts
        Is this is setup correctly, you can run pipenv in the powershell withou any errors. 
+       
+To use the right environment, then you can choose it form vscode. The next step is to link the virtual env with the right project. 
+
+To use the viretual env, run pipenv shell from powershell. Then you can run python commands from the powershell.
+
+To run a script: python run exmaple.py
+to run streamlit: streamlit run exmaple.py
+
+Ref: 
+https://olav.it/2017/03/04/pipenv-visual-studio-code/#:~:text=Pipenv%20is%20a%20more%20modern%20way%20to%20manage,get%20the%20full%20path%20to%20the%20Pipenv%27s%20virtualenv.
+
+https://pipenv.pypa.io/en/latest/basics/
+
+
+using pipenv is a bit different from using conda. You need to manually install the python env (3.x for example) in order to use it. 
