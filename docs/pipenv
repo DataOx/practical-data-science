@@ -24,6 +24,7 @@ To use the viretual env, run pipenv shell from powershell. Then you can run pyth
 To run a script: python run exmaple.py
 to run streamlit: streamlit run exmaple.py
 
+to install a specific python version, first download the python version (e.g 3.8), then in the project rootfolder, run pipenv --python 3.8
 To install all packages in requirements.txt, run pipenv install -r requirements.txt
 
 Ref: 
