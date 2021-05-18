@@ -15,9 +15,11 @@ Fix: 1) cd to the project folder in vscode and start a powershell.
        C:\Users\1056673\AppData\Roaming\Python\Python39\Scripts
        Is this is setup correctly, you can run pipenv in the powershell withou any errors. 
        
+     3) to create a virtual env for a project, you can run pipenv shell. 
+       
 To use the right environment, then you can choose it form vscode. The next step is to link the virtual env with the right project. 
 
-To use the viretual env, run pipenv shell from powershell. Then you can run python commands from the powershell.
+To use the viretual env, run pipenv shell from powershell. Then you can run python commands from the powershell. This will detect the right env for the project. 
 
 To run a script: python run exmaple.py
 to run streamlit: streamlit run exmaple.py
